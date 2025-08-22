@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Removed empty rules for body, h1-h6, p, blockquote, a as base styles are handled differently in v4 */
+}
+
+@layer components {
+  .container {
+    @apply max-w-5xl mx-auto px-4 sm:px-6;
+  }
+  
+  .professor-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 mt-8;
+  }
+}
+
+/* Handle reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
